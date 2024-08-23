@@ -7,7 +7,8 @@ const markdownpdf = require('markdown-pdf');
 const through = require('through');
 const split = require('split');
 const duplexer = require('duplexer');
-
+const minimist = require('minimist');
+const argv = minimist(process.argv.slice(2));
 const { getFormattedDate } = require('./date-helper');
 
 function buildOptions() {
@@ -15,10 +16,10 @@ function buildOptions() {
     cssPath: null,
     // paperBorder: '0cm',
     paperBorder: JSON.stringify({
-        top: '2cm',
-        right: '2cm',
-        bottom: '2cm',
-        left: '2cm'
+        top: argv.padding || '2cm',
+        right: argv.padding || '2cm',
+        bottom: argv.padding || '2cm',
+        left: argv.padding || '2cm'
     }),
     // paperOrientation: 'landscape',
     remarkable: {
