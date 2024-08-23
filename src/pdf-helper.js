@@ -13,13 +13,13 @@ const { getFormattedDate } = require('./date-helper');
 function buildOptions() {
   return {
     cssPath: null,
-    paperBorder: '0cm',
-    // paperBorder: JSON.stringify({
-    //     top: '2cm',
-    //     right: '2cm',
-    //     bottom: '2cm',
-    //     left: '2cm'
-    // }),
+    // paperBorder: '0cm',
+    paperBorder: JSON.stringify({
+        top: '2cm',
+        right: '2cm',
+        bottom: '2cm',
+        left: '2cm'
+    }),
     // paperOrientation: 'landscape',
     remarkable: {
       html: true,
